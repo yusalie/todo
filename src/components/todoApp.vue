@@ -10,7 +10,6 @@
     <tr>
       <th scope="col">Task</th>
       <th scope="col" style="width: 120px">Status</th>
-      <th scope="col" class="text-center">Edit</th>
       <th scope="col" class="text-center">Delete</th>
     </tr>
   </thead>
@@ -18,16 +17,9 @@
     <tr v-for="(task, index) in tasks" :key="index">
       <td><span :class="{'completed':task.status === 'finished'}">{{task.name}}</span></td>
       <td><span class="pointer" @click="changeStatus(index)">{{task.status}}</span></td>
-      <td>
-        <div class="text-center" @click="editTask(index)">
-          <span class="fa fa-pen"></span>
-        </div>
-        </td>
-      <td>
         <div class="text-center" @click="deleteTask(index)">
           <span class="fa fa-trash"></span>
         </div>
-        </td>
     </tr>
   </tbody>
 </table>
@@ -65,10 +57,6 @@ export default {
     },
     deleteTask(index){
       this.tasks.splice(index,1);
-    },
-    editTask(index){
-      this.task = this.tasks[index].name;
-      this.editedTask;
     },
     changeStatus(index){
       let newIndex = this.statuses.indexOf(this.tasks[index].status);
