@@ -10,8 +10,8 @@
     <tr>
       <th scope="col">Task</th>
       <th scope="col" style="width: 120px">Status</th>
-      <th scope="col" class="text-center">#</th>
-      <th scope="col" class="text-center">#</th>
+      <th scope="col" class="text-center">Edit</th>
+      <th scope="col" class="text-center">Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -46,14 +46,6 @@ export default {
       editedTask:null,
       statuses: ["to-do", "in-progress", "finished"],
       tasks:[
-        {
-        name:'complete thavas deck',
-        status:'in progress'
-      },
-      {
-        name:'complete gavrail deck',
-        status:'to-do'
-      }
       ]
     }
   },
